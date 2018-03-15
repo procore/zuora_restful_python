@@ -3,9 +3,9 @@ A python class for accessing the Zuora API via REST
 
 # install
 ```
-pip install  git+git://github.com/bolaurent/zuora_restful_python.git
+pip install  git+https://github.com/procore/zuora_restful_python.git
  -- or --
-pip install --upgrade git+git://github.com/bolaurent/zuora_restful_python
+pip install --upgrade git+https://github.com/procore/zuora_restful_python
 ```
 
 # sample use
