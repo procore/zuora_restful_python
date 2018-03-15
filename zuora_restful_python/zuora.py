@@ -41,11 +41,17 @@ class Zuora(object):
             self.endpoint = 'https://rest.zuora.com/v1'
         elif endpoint == 'sandbox':
             self.endpoint = 'https://rest.apisandbox.zuora.com/v1'
+        elif endpoint == 'reporting':
+            self.endpoint = 'https://zconnect.zuora.com/api/rest/v1'
         else:
             self.endpoint = endpoint
 
         self.accounting_periods = None
         self.headers = headers
+
+        if endpoint == 'https://zconnect.zuora.com/api/rest/v1':
+            self.headers['apiAccessKeyId'] = username
+            self.headers['apiSecretAccessKey'] = password
 
     def _get(self, path, payload=None):
         response = requests.get(self.endpoint + path,
